@@ -30,7 +30,7 @@ class Books extends Component {
             bookId: item._id
         };
         console.log('req: ', req);
-        Axios.post('http://localhost:8000/add-to-cart', req, { withCredentials: true }).then((res) => {
+        Axios.post('https://sleepy-oasis-49841.herokuapp.com/add-to-cart', req, { withCredentials: true }).then((res) => {
             console.log('book added: ', res);
             alert('Book added in your cart');
             this.props.history.push('/cart');
@@ -42,7 +42,7 @@ class Books extends Component {
         // console.log('params: ', params)
 
         const id = params.id;
-        Axios.get('http://localhost:8000/book/' + id).then((res) => {
+        Axios.get('https://sleepy-oasis-49841.herokuapp.com/book/' + id).then((res) => {
             console.log('res in books: ', res);
             this.setState({
                 books: res.data,

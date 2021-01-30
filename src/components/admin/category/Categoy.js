@@ -32,7 +32,7 @@ class Category extends Component {
             categoryDes: this.state.categoryDes,
             categoryImg: this.state.categoryImg,
         };
-        axios.post('http://localhost:8000/categories', req, { withCredentials: true }).then(res => {
+        axios.post('https://sleepy-oasis-49841.herokuapp.com/categories', req, { withCredentials: true }).then(res => {
             this.getCategories();
 
         }).catch(error => {
@@ -59,7 +59,7 @@ class Category extends Component {
             categoryImg: this.state.categoryImg,
         };
         const id = this.state.id;
-        axios.patch('http://localhost:8000/update-category/' + id, req, { withCredentials: true }).then((res) => {
+        axios.patch('https://sleepy-oasis-49841.herokuapp.com/update-category/' + id, req, { withCredentials: true }).then((res) => {
             this.getCategories();
         }).catch(error => console.log('error: ', error));
 
@@ -83,7 +83,7 @@ class Category extends Component {
     }
     getCategories() {
         this.resetState();
-        axios.get('http://localhost:8000/categories-list').then(res => {
+        axios.get('https://sleepy-oasis-49841.herokuapp.com/categories-list').then(res => {
             this.setState({
                 tableRecord: res.data
             });
@@ -114,7 +114,7 @@ class Category extends Component {
     }
     deleteTableRecordHandler(id) {
         console.log({'in delete:':id});
-        axios.delete(`http://localhost:8000/delete-category/${id}`, { withCredentials: true }).then((res) => {
+        axios.delete(`https://sleepy-oasis-49841.herokuapp.com/delete-category/${id}`, { withCredentials: true }).then((res) => {
                 console.log('delete',res);
             this.getCategories();
             alert('Category deleted successfully');

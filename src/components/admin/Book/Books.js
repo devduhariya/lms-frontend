@@ -54,13 +54,13 @@ class AdminBooks extends Component {
             // issuedBook: this.state.issuedBook,
         };
         const id = this.state.id;
-        axios.patch('http://localhost:8000/update-book/' + id,req,{ withCredentials: true } ).then((res) => {
+        axios.patch('https://sleepy-oasis-49841.herokuapp.com/update-book/' + id,req,{ withCredentials: true } ).then((res) => {
             this.getCategories();
         }).catch(error => console.log('error: ', error));
         alert('category updated successfully!');
     }
     getBooks() {
-        axios.get('http://localhost:8000/books').then(res => {
+        axios.get('https://sleepy-oasis-49841.herokuapp.com/books').then(res => {
             this.setState({
                 books: res.data
             });
@@ -72,7 +72,7 @@ class AdminBooks extends Component {
         });
     }
     getCategory(){
-        axios.get('http://localhost:8000/categories-list').then(res => {
+        axios.get('https://sleepy-oasis-49841.herokuapp.com/categories-list').then(res => {
             this.setState({
                 categoryList: res.data,
                 selectedCategory: res.data[0]._id
@@ -167,7 +167,7 @@ class AdminBooks extends Component {
         });
     }
     deleteTableRecordHandler(id) {
-        axios.delete('http://localhost:8000/delete-book/' + id,{ withCredentials: true }).then((res) => {
+        axios.delete('https://sleepy-oasis-49841.herokuapp.com/delete-book/' + id,{ withCredentials: true }).then((res) => {
             this.getBooks();
         }).catch(error => console.log('error: ', error));
         alert('Book deleted successfully');

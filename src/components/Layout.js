@@ -15,7 +15,7 @@ class Layout extends Component {
     }
     checkLogin() {
         console.log('in chk login');
-        axios.get('http://localhost:8000/session', { withCredentials: true }).then(res => {
+        axios.get('https://sleepy-oasis-49841.herokuapp.com/session', { withCredentials: true }).then(res => {
             console.log('res: session', res);
             if (res.data.session && res.data.session.userEmail) {
                 this.setState({

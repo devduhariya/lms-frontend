@@ -12,7 +12,7 @@ class Home extends Component {
         };
     }
     componentDidMount() {
-        Axios.get('http://localhost:8000/categories-list',{ withCredentials: true }).then((res) => {
+        Axios.get('https://sleepy-oasis-49841.herokuapp.com/categories-list',{ withCredentials: true }).then((res) => {
             this.setState({
                 categories: res.data
             })

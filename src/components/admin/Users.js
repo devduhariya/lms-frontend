@@ -11,7 +11,7 @@ class Users extends Component {
         this.getUsers();
     }
     getUsers() {
-        axios.get('http://localhost:8000/user-list',).then(res => {
+        axios.get('https://sleepy-oasis-49841.herokuapp.com/user-list',).then(res => {
             console.log("users",res);
             this.setState({
                 usersRecord: res.data,

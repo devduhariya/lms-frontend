@@ -16,7 +16,7 @@ class Cart extends Component {
         this.getCart = this.getCart.bind(this);
     }
     getCart() {
-        axios.get('http://localhost:8000/cart', { withCredentials: true }).then(res => {
+        axios.get('https://sleepy-oasis-49841.herokuapp.com/cart', { withCredentials: true }).then(res => {
             console.log('res: ', res);
             this.setState({
                 cart: res.data.items

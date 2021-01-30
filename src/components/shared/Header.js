@@ -9,7 +9,7 @@ class Header extends Component {
         this.logout = this.logout.bind(this);
     }
     logout() {
-        axios.get('http://localhost:8000/logout', { withCredentials: true }).then((res) => {
+        axios.get('https://sleepy-oasis-49841.herokuapp.com/logout', { withCredentials: true }).then((res) => {
             console.log({ res });
             window.location.pathname = '/login';
             // this.props.history.push('/login');

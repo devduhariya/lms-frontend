@@ -129,7 +129,7 @@ class AdminBooks extends Component {
             categoryId: this.state.selectedCategory
         };
         console.log('select: ', req);
-        axios.post('http://localhost:8000/add/book', req, { withCredentials: true }).then(res => {
+        axios.post('https://sleepy-oasis-49841.herokuapp.com/add/book', req, { withCredentials: true }).then(res => {
             this.getBooks();
 
         }).catch(error => {
